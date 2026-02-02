@@ -1,75 +1,149 @@
+/* AdLoop Samsung TV – full-screen layout, branch list, message overlay */
+
 * {
-    font-family: Lucida Sans, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 50px auto;
-    background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  font-family: Lucida Sans, Arial, Helvetica, sans-serif;
+  color: #eee;
 }
 
-header h1 {
-    font-size: 108px;
-    margin: 0px;
+#adloop-app {
+  position: absolute;
+  inset: 0;
 }
 
-header h2 {
-    font-size: 54px;
-    margin: 0px;
-    color: #888;
-    font-style: italic;
+.adloop-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 20px;
-    display: block;
-    clear: right;
-    background-color: #666;
-    padding-left: 4px;
-    height: 48px;
+.adloop-screen.adloop-hidden {
+  display: none;
 }
 
-nav ul li {
-    display: inline;
-    padding: 0px 20px 5px 10px;
-    border-right: 1px solid #ccc;
+/* Branch selection */
+#adloop-branch-screen {
+  justify-content: flex-start;
+  padding-top: 80px;
 }
 
-nav ul li a {
-    color: #EFD3D3;
-    text-decoration: none;
-    font-size: 39px;
-    font-weight: bold;
+.adloop-title {
+  font-size: 48px;
+  margin: 0 0 16px;
+  font-weight: bold;
+  text-align: center;
 }
 
-nav ul li a:hover {
-    color: #fff;
+.adloop-subtitle {
+  font-size: 28px;
+  margin: 0 0 32px;
+  color: #aaa;
+  text-align: center;
 }
 
-article > header h1 {
-    font-size: 60px;
-    margin-left: 14px;
+.adloop-status {
+  font-size: 28px;
+  color: #888;
+  margin-bottom: 24px;
 }
 
-article > header h1 a {
-    color: #993333;
+.adloop-error {
+  font-size: 26px;
+  color: #e66;
+  margin-bottom: 24px;
+  max-width: 800px;
+  text-align: center;
 }
 
-article > header h1 img {
-    vertical-align:middle;
+.adloop-branch-list {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 0;
 }
 
-article > section header h1 {
-    font-size: 48px;
+.adloop-branch-item {
+  display: block;
+  width: 100%;
+  padding: 28px 32px;
+  font-size: 28px;
+  text-align: left;
+  background-color: #2a2a2a;
+  border: 3px solid #444;
+  border-radius: 8px;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
-article p {
-    clear: both;
+.adloop-branch-item:hover,
+.adloop-branch-item:focus {
+  background-color: #333;
+  border-color: #6a9;
+  outline: none;
 }
 
-footer p {
-    text-align: center;
-    font-size: 36px;
-    color: #888;
-    margin-top: 30px;
+.adloop-branch-name {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.adloop-branch-desc {
+  display: block;
+  font-size: 22px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.adloop-branch-count {
+  display: block;
+  font-size: 22px;
+  color: #6a9;
+}
+
+/* Message overlay (Display paused / No videos) */
+.adloop-message-title {
+  font-size: 42px;
+  margin: 0 0 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.adloop-message-subtitle {
+  font-size: 26px;
+  color: #aaa;
+  text-align: center;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Video full-screen */
+#adloop-video-screen {
+  padding: 0;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.adloop-video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
