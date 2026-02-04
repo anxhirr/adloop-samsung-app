@@ -1,0 +1,16 @@
+{
+  "name": "addloop",
+  "version": "1.0.0",
+  "description": "Simple ads player remotelly controlled",
+  "homepage": "https://github.com/anxhirr/adloop-samsung-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anxhirr/adloop-samsung-app.git"
+  },
+  "license": "ISC",
+  "author": "anxhirr",
+  "main": "index.html",
+  "packageType": "app",
+  "appName": "AdLoop",
+  "appPath": "index.html"
+}
