@@ -30,6 +30,10 @@ body {
   padding: 48px;
 }
 
+.adloop-hidden {
+  display: none;
+}
+
 .adloop-screen.adloop-hidden {
   display: none;
 }

@@ -101,11 +101,11 @@ var AdLoopApp = (function () {
       showScreen(SCREEN_MESSAGE);
       return;
     }
-    AdLoopPlayer.loadBranch(state.currentVideos);
     AdLoopPlayer.setOnVideoStarted(function (video) {
       state.currentVideoId = video.id || '';
     });
     AdLoopPlayer.setOnVideoError(function () {});
+    AdLoopPlayer.loadBranch(state.currentVideos);
     startTimers();
     showScreen(SCREEN_VIDEO);
   }
